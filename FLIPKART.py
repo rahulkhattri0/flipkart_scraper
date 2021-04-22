@@ -43,7 +43,7 @@ def products(brand):
 
             review_text = rr.find('span').find_all('span')[-1].text.split()[0].replace(',', '')
             
-            st.image('https://rukminim1.flixcart.com/image/312/312/kfzq8i80/television/e/j/y/oneplus-32h0a00-original-imafwb6wmqxh2ung.jpeg?q=70',output_format="auto")
+            # st.image('https://rukminim1.flixcart.com/image/312/312/kfzq8i80/television/e/j/y/oneplus-32h0a00-original-imafwb6wmqxh2ung.jpeg?q=70',output_format="auto")
             cols = st.beta_columns(4)
             cols[0].write(prod.find('div', {'class' : '_4rR01T'}).text)
             cols[1].write(prod.find('div', {'class' : '_30jeq3'}).text)
