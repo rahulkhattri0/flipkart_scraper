@@ -37,11 +37,9 @@ def users(usernames):
             st.image(u.find('img').attrs.get('src'),caption="profile photo")
             st.header("FULL NAME")
             st.write(u.find('span',attrs={'class':'p-name vcard-fullname d-block overflow-hidden'}).text)
-            status=soup.find_all('div',attrs={'class':'user-status-emoji-container mr-2'})
             st.header('user status')
-            for s in status:
-                st.image(s.find('g-emoji').attrs.get('fallback-src'))
-                st.write(s.find('div',attrs={'class':'user-status-message-wrapper f6 color-text-primary ws-normal lh-condensed'}).find('div').text)
+            st.image(soup.find('g-emoji').attrs.get('fallback-src'))
+            st.write(soup.find('div',attrs={'class':'user-status-message-wrapper f6 color-text-primary ws-normal lh-condensed'}).find('div').text)
 st.title("GITHUB SCRAPER")
 us=st.text_input("enter username")
 users(us)
